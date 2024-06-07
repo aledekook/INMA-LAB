@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+   
+    <link rel="stylesheet" href="css/es-principal.css">
+    <style>
+        .slider {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 500%; /* 5 imágenes */
+        }
+
+        .slides img {
+            width: 20%; /* 100% / 5 imágenes */
+            flex-shrink: 0;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            var linkInicio = document.getElementById("link-inicio");
+            var linkSobreNosotros = document.getElementById("link-sobre-nosotros");
+            var linkCursos = document.getElementById("link-cursos");
+            var linkGaleria = document.getElementById("link-galeria");
+
+            
+            var contenidoInicio = document.getElementById("contenido-inicio");
+            var contenidoSobreNosotros = document.getElementById("contenido-sobre-nosotros");
+            var contenidoCursos = document.getElementById("contenido-cursos");
+            var contenidoGaleria = document.getElementById("contenido-galeria");
+
+            
+            function toggleContent(contenido) {
+                if (contenido.style.display === "none") {
+                    contenido.style.display = "block";
+                } else {
+                    contenido.style.display = "none";
+                }
+            }
+
+            //  clics
+            linkInicio.addEventListener("click", function(event) {
+                event.preventDefault();
+                toggleContent(contenidoInicio);
+            });
+
+            linkSobreNosotros.addEventListener("click", function(event) {
+                event.preventDefault();
+                toggleContent(contenidoSobreNosotros);
+            });
+
+            linkCursos.addEventListener("click", function(event) {
+                event.preventDefault();
+                toggleContent(contenidoCursos);
+            });
+
+            linkGaleria.addEventListener("click", function(event) {
+                event.preventDefault();
+                toggleContent(contenidoGaleria);
+            });
+
+            // Slider - galería
+            var slideIndex = 0;
+            var slides = document.querySelector('.slides');
+
+            function showSlides() {
+                var totalSlides = slides.children.length;
+                slides.style.transform = 'translateX(' + (-slideIndex * 100 / totalSlides) + '%)';
+                slideIndex = (slideIndex + 1) % totalSlides;
+            }
+
+            setInterval(showSlides, 3000); 
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="con-encabezado">
+            <img src="C:\Users\hp\Downloads\cic.png" alt="logo del colegio">
+            <p>Colegio Inmaculada Concepción</p>
+        </div>
+    </header>
+    <nav>
+        <div class="con-nav">
+        
+            <a href="#" id="link-inicio">Inicio</a>
+            <a href="#" id="link-sobre-nosotros">Sobre Nosotros</a>
+            <a href="#" id="link-cursos">Cursos</a>
+            <a href="#" id="link-galeria">Galería</a>
+        </div>
+    </nav>
+    <div class="container" id="contenido-inicio" style="display: none;">
+        <h2>Inicio</h2>
+        <p>A pedido del Obispo del Alto Paraná, El Monseñor Agustín Van Aaken, las hermanas se establecieron en Ciudad Del Este el 11 de enero de 1978, con el fin
+            de cooperar en la acción evangelizadora de la Iglesia en la nueva población. Las primeras hermanas llegaron a nuestra tierra guaraní en el año 1939, instalándose en
+            la ciudad de Caazapá.
+            La primera comunidad estaba constituida por las Hermanas: María Lucila Rivas, María Isolina Arévalos y María Victoria Vera.</p>
+        <p><u>Actualmente en Ciudad Del Este:</u></p>
+        <p>-Funciona el Jardín de infantes, Pre-escolar, Primer ciclo, Segundo ciclo y nivel medio en sus diferentes modalidades.
+           La comunidad educativa une fuerzas para el logro de los objetivos, promover y afianzar los valores evangélicos siguiendo el carisma de Emilie.
+           Desde una proyección solidaria las hermanas, alumnos y profesores ponen esfuerzo y entusiasmo para visitar a las familias carenciadas, preparar alimentos y
+           compartir con aquellos niños que necesitan;
+           También llevan adelante la construcción de una vivienda por año. Estas actividades propician en los alumnos el deseo de servir al prójimo haciéndoles
+           tomar conciencia que desde el carisma azul hay que dar respuestas evangélicas.</p>
+           <h5>¿Quién era Emilie de Villeneuve?</h5>
+           <p>Jeanne Emilie de Villeneuve nació en Tolouse, el 9 de marzo de 1811 y falleció el 2 de octubre de 1854. Fue la fundadora de 
+              la Congregación de Nuestra Señora de la Inmaculada Concepción de Castres en 1836. Fue canonizada junto a Mariam Baouardy, María Cristina de la 
+              Inmaculada Concepción Brando y Marie-Alphonsine Ghattas, por el papa Francisco el 17 de mayo de 2015 en la Ciudad del Vaticano. Emilie siempre 
+              tuvo el espíritu de ayudar a los pobres, era humilde, empática, servicial, tenía mucha fé y devoción a Dios, lo que la llevó a realizar múltiples 
+              misiones alrededor del mundo; Esparciendo siempre el Sólo Dios y el amor al prójimo.
+           </p>
+    </div>
+    <div class="container" id="contenido-sobre-nosotros" style="display: none;">
+        <h2>La Institución</h2>
+        <img src="C:\Users\hp\Downloads\emilie.png" alt="Imagen de Emilie" style="width:400%;max-width:500px;">
+        <p>El <q>College De L` Immaculee Conception</q> es una institución educativa de gestión totalmente privada, perteneciente a la Congregacion
+            de las Hermanas de Nuestra Señora de la Inmaculada Concepción de Castres, su principal función es ofrecer un servicio educativo 
+            integral de calidad, promoviendo la excelencia, humildad, siguiendo siempre los pasos de la Santa Emilie de Villeneuve. </p> 
+        <h3>Misión</h3>
+        <p>La Mística del Carisma de la Congregación impulsa a responder a favor de la vida a través de la educación integral 
+           para formar líderes que sean capaces de transformar la sociedad en la cultura de la paz, justicia y solidaridad, 
+           promoviendo la dignidad humana y la conciencia planetaria.</p>
+        <img src="C:\Users\hp\Downloads\double-check_10336208.png" alt="Imagen de Misión" style="width:50%;max-width:60px;">
+        <h4>Visión</h4>
+        <p>La educación integral como fuente transformadora y humanizadora, donde niños y jóvenes sean capaces de asumir un compromiso con la causa
+           de los más desfavorecidos,
+           la cultura de la paz, dignidad humana y conciencia planetaria siguiendo el carisma de Emilie de Villeneuve.</p>
+        <img src="C:\Users\hp\Downloads\Twemoji_1f6b9.svg.png" alt="Imagen de Visión" style="width:50%;max-width:60px;">
+        <h3>Ubicación</h3>
+        <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28802.920389269417!2d-54.623561184716785!3d-25.526214409815623!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f68ffb8596108d%3A0x52e1f45c5b57ed00!2sColegio%20Inmaculada%20Concepci%C3%B3n!5e0!3m2!1ses!2spy!4v1717705329346!5m2!1ses!2spy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="container" id="contenido-cursos" style="display: none;">
+        <h2>Cursos</h2>
+        <p>♦El colegio Inmaculada Concepción cuenta con:</p>
+        <img src="C:\Users\hp\Downloads\en.jpg" alt="Imagen de enseñar" style="width: 200px;max-width:250px;">
+        <p><u>♦Maternal 1:</u> Desde los 13 meses hasta los 24 meses.</p>
+        <p><u>♦Maternal 2:</u>Desde los 25 meses hasta los 36 meses.</p> 
+        <p>♦Jardín, Pre-escolar</p>
+        <p><u>♦Primaria:</u>Desde Primer Grado hasta Sexto Grado.</p>
+        <p><u>♦Secundaria: </u>Desde Septimo Grado hasta Noveno Grado.</p>
+        <p><u>♦Bachillerato:</u> Desde primer hasta tercer año, en bachilleres como Informática, administación,
+        Ciencias Básicas, Salud.</p>
+        <p>A parte el Colegio también cuenta con Clases de Robótica Educativa, Grupo de inglés, Coro, Matemáticas,
+            Futsal masculino y Handball mixto.
+        </p>
+    </div>
+    <div class="container" id="contenido-galeria" style="display: none;">
+        <h2>Galería</h2> 
+        <div class="slider">
+            <div class="slides">
+                <img src="C:\Users\hp\Downloads\WhatsApp Image 2024-06-06 at 7.31.55 PM.jpeg" alt="Imagen 1">
+                <img src="C:\Users\hp\Downloads\WhatsApp Image 2024-06-06 at 7.31.56 PM (1).jpeg" alt="Imagen 2">
+                <img src="C:\Users\hp\Downloads\WhatsApp Image 2024-06-06 at 7.31.56 PM (2).jpeg" alt="Imagen 3">
+                <img src="C:\Users\hp\Downloads\WhatsApp Image 2024-06-06 at 7.31.56 PM.jpeg" alt="Imagen 4">
+                <img src="C:\Users\hp\Downloads\WhatsApp Image 2024-06-06 at 7.31.57 PM.jpeg" alt="Imagen 5">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© Promo 024. Cuca.</p>
+        <footer>
+        <p>Ponte en contacto a través de: <a href="mailto:ivannagarcia200608@gmail.com">ivannagarcia200608@gmail.com</a>.</p>
+        <p><a href="https://www.instagram.com/ciccdeoficial/" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/p/Colegio-Inmaculada-Concepcion-Ciudad-del-Este-100075990470178/?locale=es_LA" target="_blank">Facebook</a></p>
+    </footer>
+</body>
+</html>
