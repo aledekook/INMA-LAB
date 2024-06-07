@@ -30,6 +30,7 @@ header {
 
 .con-encabezado {
     width: var(--anchoPag);
+    max-width: 100%;
     height: 150px;
     background: #191856;
     margin: auto;
@@ -55,9 +56,13 @@ header {
 .con-nav {
     background: var(--fondoNAV);
     width: var(--anchoPag);
+    max-width: 100%;
     height: 35px;
     margin: auto;
     margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .con-nav a {
@@ -67,10 +72,12 @@ header {
     font-size: 17px;
     color: #fff;
     line-height: 35px;
+    flex: 1 1 auto;
+    text-align: center;
 }
 
 .con-nav a:hover {
-    transform: scale(1.7);
+    transform: scale(1.1);
     transition: all 0.5s ease;
     background: #5d6979;
     color: #9cf8df;
@@ -79,6 +86,7 @@ header {
 .container {
     flex: 1;
     width: var(--anchoPag);
+    max-width: 100%;
     margin: auto;
     padding: 20px;
 }
@@ -101,7 +109,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
 h2, h3, h4, h5 {
     background-color: #325a67;
     color: #fff;
@@ -109,22 +116,24 @@ h2, h3, h4, h5 {
     font-size: 24px; 
     margin: 10px 0; 
     padding: 5px; 
-    
 }
+
 img {
     max-width: 100%;
     height: auto;
     display: block;
     align-items: center;
 }
+
 .container {
-    text-align:center; 
+    text-align: center; 
 }
 
 .container img {
     display: inline-block; 
     margin: 20px auto; 
 }
+
 .slider {
     position: relative;
     width: 100%;
@@ -144,11 +153,9 @@ img {
 }
 
 .slider:after {
-
     display: block;
     padding-top: 56.25%; 
 }
-
 
 @media (max-width: 720px) {
     header {
@@ -170,5 +177,13 @@ img {
     .con-encabezado p {
         font-size: 20px;
         text-align: center;
+    }
+    .con-nav {
+        flex-direction: column;
+        height: auto;
+    }
+    .con-nav a {
+        flex: none;
+        margin: 5px 0;
     }
 }
